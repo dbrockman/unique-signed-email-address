@@ -1,0 +1,44 @@
+{
+  "name": "unique-signed-email-address",
+  "version": "0.0.0",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "repository": "git@github.com:dbrockman/unique-signed-email-address.git",
+  "author": "David Brockman Smoliansky <david@springworks.se>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "yarn run build",
+    "lint": "tslint --project tsconfig.json --format stylish && prettier -l '{*,src/**/*}.{json,md}'",
+    "fix": "tslint --project tsconfig.json --format stylish --fix && prettier --write '{*,src/**/*}.{json,md}'",
+    "test": "jest",
+    "build": "tsc",
+    "prebuild": "del build",
+    "postbuild": "del 'build/**/__*__/'"
+  },
+  "dependencies": {
+    "base-x": "^3.0.4",
+    "ow": "^0.7.0"
+  },
+  "devDependencies": {
+    "@springworks/tslint-config": "^2.0.0",
+    "@types/base-x": "^1.0.29",
+    "@types/jest": "^23.3.3",
+    "@types/node": "^10.11.4",
+    "del-cli": "^1.1.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-plugin-prettier": "^2.0.0",
+    "typescript": "^3.1.1",
+    "typestrict": "^1.0.1"
+  },
+  "engines": {
+    "node": "^10.11.0",
+    "yarn": "^1.10.1"
+  }
+}
